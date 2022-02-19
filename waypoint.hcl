@@ -14,7 +14,10 @@ app "web" {
   }
 
   build {
-    use "docker" {}
+    use "docker" {
+      dockerfile = "docker/Dockerfile"
+      context = "../"
+    }
 
     registry {
       use "aws-ecr" {
