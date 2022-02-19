@@ -75,18 +75,7 @@ job "${job_name}" {
 
       template {
         data = <<-EOF
-        REDIS_URI = "{{with secret "kv/data/report-builder/${kv_path}"}}{{.Data.data.REDIS_URI}}{{end}}"
-        PG_DB = "{{with secret "kv/data/report-builder/${kv_path}"}}{{.Data.data.PG_DB}}{{end}}"
-        PG_USERNAME = "{{with secret "kv/data/report-builder/${kv_path}"}}{{.Data.data.PG_USERNAME}}{{end}}"
-        PG_PASSWORD = "{{with secret "kv/data/report-builder/${kv_path}"}}{{.Data.data.PG_PASSWORD}}{{end}}"
-        ALLOWED_HOSTS = "{{with secret "kv/data/report-builder/${kv_path}${client_path}"}}{{.Data.data.ALLOWED_HOSTS}}{{end}}"
-        USER_SERVICE_HOST = "{{with secret "kv/data/report-builder/${kv_path}"}}{{.Data.data.USER_SERVICE_HOST}}{{end}}"
-        LOG_LEVEL = "{{with secret "kv/data/report-builder/${kv_path}"}}{{.Data.data.LOG_LEVEL}}{{end}}"
-        LAKE_USERNAME = "{{with secret "kv/data/report-builder/${kv_path}${client_path}"}}{{.Data.data.LAKE_USERNAME}}{{end}}"
-        LAKE_PASSWORD = "{{with secret "kv/data/report-builder/${kv_path}${client_path}"}}{{.Data.data.LAKE_PASSWORD}}{{end}}"
-        LAKE_DB = "{{with secret "kv/data/report-builder/${kv_path}${client_path}"}}{{.Data.data.LAKE_DB}}{{end}}"
-        QUERY_FAIL_EMAIL_LIST = "{{with secret "kv/data/report-builder/${kv_path}"}}{{.Data.data.QUERY_FAIL_EMAIL_LIST}}{{end}}"
-        DEBUG = "{{with secret "kv/data/report-builder/${kv_path}"}}{{.Data.data.DEBUG}}{{end}}"
+        PG_NAME = "{{with secret "kv/data/report-builder/${kv_path}"}}{{.Data.data.PG_DB}}{{end}}"
         EOF
         destination = ".env"
         env = true
