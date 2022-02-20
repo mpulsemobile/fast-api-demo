@@ -70,6 +70,7 @@ job "${job_name}" {
 
       config {
         image             = "${image}"
+        entrypoint = "/app/entrypoint.sh"
         memory_hard_limit = ${memory_max}
       }
 
