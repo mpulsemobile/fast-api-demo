@@ -5,11 +5,11 @@ services:
     image: postgres:10
     container_name: fastapi_db
     environment:
-      - POSTGRES_DB=api
+      - POSTGRES_DB=fastapi
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     ports:
-      - "5433:5432"
+      - "5432:5432"
   web:
     container_name: fastapi_web
     build:
