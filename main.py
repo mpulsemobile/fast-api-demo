@@ -1,15 +1,10 @@
 from fastapi import FastAPI
-from api.routers import users
 import logging
 from logging import config
 from settings import settings
+from api import api_router
 
 
 app = FastAPI()
-app.include_router(users.router)
+app.include_router(api_router)
 logging.config.dictConfig(settings.LOG_SETTINGS)
-
-
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
