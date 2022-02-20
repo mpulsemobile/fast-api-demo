@@ -61,7 +61,7 @@ variable "nomad_datacenter" {
 variable "nomad_jobname" {
   type        = string
   description = "The name of the job in Nomad."
-  default     = "report-builder"
+  default     = "fast-api"
 }
 
 variable "ecr_repo" {
