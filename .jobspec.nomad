@@ -70,7 +70,7 @@ job "${job_name}" {
 
       config {
         image             = "${image}"
-        entrypoint = "/app/entrypoint.sh"
+        entrypoint = "/app/docker/entrypoint.sh"
         memory_hard_limit = ${memory_max}
       }
 
