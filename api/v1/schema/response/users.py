@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
 
-class CreateUser(BaseModel):
+class CreateUserResponse(BaseModel):
     name: str
     id: int
 
@@ -9,8 +9,8 @@ class CreateUser(BaseModel):
         orm_mode = True
 
 
-class GetUsers(BaseModel):
-    data: list[CreateUser]
+class GetUsersResponse(BaseModel):
+    data: list[CreateUserResponse]
 
     class Config:
         orm_mode = True

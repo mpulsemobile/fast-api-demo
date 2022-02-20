@@ -1,7 +1,7 @@
 from pydantic import BaseModel, validator
 
 
-class CreateUser(BaseModel):
+class CreateUserRequest(BaseModel):
     name: str
 
     @validator("name")

@@ -9,14 +9,18 @@ from models import get_db, user as user_model
 user_router = APIRouter(prefix="/users")
 
 
-@user_router.get("/", tags=["users"], response_model=response_schema.GetUsers)
+@user_router.get("/", tags=["users"], response_model=response_schema.GetUsersResponse)
 async def get_users(db: Session = Depends(get_db)):
     users = db.query(user_model.User).all()
-    return response_schema.GetUsers(data=users)
+    return response_schema.GetUsersResponse(data=users)
 
 
-@user_router.post("/", tags=["users"], response_model=response_schema.CreateUser)
-async def create_user(user: request_schema.CreateUser, db: Session = Depends(get_db)):
+@user_router.post(
+    "/", tags=["users"], response_model=response_schema.CreateUserResponse
+)
+async def create_user(
+    user: request_schema.CreateUserRequest, db: Session = Depends(get_db)
+):
     logging.info("Creating User")
     db_user = user_model.User(name=user.name)
     db.add(db_user)
