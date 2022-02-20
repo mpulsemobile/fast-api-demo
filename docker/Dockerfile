@@ -10,5 +10,4 @@ RUN pipenv install --system --deploy
 
 COPY . .
 RUN chmod a+x docker/entrypoint.sh
-
-ENTRYPOINT ['docker/entrypoint.sh']
+ENTRYPOINT ["/app/docker/entrypoint.sh"]

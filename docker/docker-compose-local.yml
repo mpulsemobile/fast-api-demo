@@ -13,7 +13,7 @@ services:
     build:
       context: ../
       dockerfile: docker/Dockerfile
-    entrypoint: docker/entrypoint.sh
+    image: fast-api
     ports:
       - "3000:3000"
     env_file:
