@@ -16,7 +16,6 @@ app "web" {
   build {
     use "docker" {
       dockerfile = "docker/Dockerfile"
-      entrypoint = "/app/docker"
     }
 
     registry {
