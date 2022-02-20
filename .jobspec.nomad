@@ -76,6 +76,8 @@ job "${job_name}" {
       template {
         data = <<-EOF
         PG_NAME = "{{with secret "kv/data/report-builder/${kv_path}"}}{{.Data.data.PG_DB}}{{end}}"
+        PG_USERNAME = "{{with secret "kv/data/report-builder/${kv_path}"}}{{.Data.data.PG_DB}}{{end}}"
+        PG_PASSWORD = "{{with secret "kv/data/report-builder/${kv_path}"}}{{.Data.data.PG_DB}}{{end}}"
         EOF
         destination = ".env"
         env = true
