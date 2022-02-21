@@ -40,11 +40,6 @@ job "${job_name}" {
               destination_name = "mpulse-postgresql-shared"
               local_bind_port  = 5432
             }
-
-            upstreams {
-              destination_name = "mpulse-redshift"
-              local_bind_port  = 5439
-            }
           }
         }
       }
